@@ -1,0 +1,118 @@
+name: flutter_app
+description: "A new Flutter project."
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.3 <4.0.0"
+
+dependencies:
+  auto_size_text: ^3.0.0
+  # carousel_slider: ^4.2.1
+  carousel_slider: ^5.0.0
+  cupertino_icons: ^1.0.6
+  firebase_analytics: ^11.1.0
+  firebase_core: ^3.1.1
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.10+1
+  font_awesome_flutter: ^10.7.0
+  google_fonts: ^6.2.1
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_lints: ^3.0.0
+
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/banner/
+
+    - assets/images/e9b4486e5cb972cdb482690080dfcd70.png
+    - assets/images/horarios1.jpg
+    - assets/images/horarios2.jpg
+    - assets/images/maps.png
+    - assets/images/rectangl.png
+    - assets/images/rectangle.png
+    - assets/images/rectangle_1.png
+    - assets/images/rectangle_3.png
+    - assets/images/rectangle_4.png
+    - assets/images/rectangle_5.png
+    - assets/images/rectangle_6.png
+    - assets/images/rectangle_7.png
+    - assets/images/rectangle_9.png
+    - assets/images/rectangle_10.png
+    - assets/images/rectangle_11.png
+    - assets/images/rectangle_13.png
+    - assets/images/rectangle_15.png
+    - assets/images/rectangle_16.png
+    - assets/images/rectangle_18.png
+    - assets/images/rectangle_20.jpeg
+    - assets/images/rectangle_20.png
+    - assets/images/rectangle_22.png
+    - assets/images/rectangle_23.jpeg
+    - assets/images/fut/fut1.jpg
+    - assets/images/fut/fut2.jpg
+    - assets/images/fut/fut3.jpg
+    - assets/images/fut/fut4.jpg
+    - assets/images/fut/fut5.jpg
+    - assets/images/fut/fut6.jpg
+    - assets/images/fut/fut7.jpg
+    - assets/images/fut/fut8.jpg
+    - assets/images/fut/fut9.jpg
+    - assets/images/fut/fut10.jpg
+    - assets/images/box/box1.jpg
+    - assets/images/box/box2.jpg
+    - assets/images/box/box3.jpg
+    - assets/images/box/box4.jpg
+    - assets/images/box/box5.jpg
+    - assets/images/box/box6.jpg
+    - assets/images/box/box7.jpg
+    - assets/images/box/box8.jpg
+    - assets/images/box/box9.jpg
+    - assets/images/estre/estre.jpg
+    - assets/images/estre/estre1.jpg
+    - assets/images/estre/estre2.jpg
+    - assets/images/estre/estre3.jpg
+    - assets/images/estre/estre4.jpg
+    - assets/images/luchas/lucha1.jpg
+    - assets/images/luchas/lucha2.jpg
+    - assets/images/luchas/lucha3.jpg
+    - assets/images/luchas/lucha4.jpg
+    - assets/images/luchas/lucha5.jpg
+    - assets/images/luchas/lucha6.jpg
+    - assets/images/luchas/lucha7.jpg
+    - assets/images/rectangle_24.png
+    - assets/images/horarios1.png
+    - assets/images/horarios2.png
+    - assets/images/pots/box/box1.png
+    - assets/images/pots/box/box2.png
+    - assets/images/pots/box/box3.png
+    - assets/images/pots/box/box5.png
+    - assets/images/pots/box/box6.png
+    - assets/images/pots/box/box7.png
+    - assets/images/pots/box/box8.png
+    - assets/images/pots/box/box9.png
+    - assets/images/pots/fut/fut1.png
+    - assets/images/pots/fut/fut2.png
+    - assets/images/pots/fut/fut3.png
+    - assets/images/pots/fut/fut4.png
+    - assets/images/pots/fut/fut5.png
+    - assets/images/pots/fut/fut6.png
+    - assets/images/pots/fut/fut7.png
+    - assets/images/pots/fut/fut8.png
+    - assets/images/pots/fut/fut9.png
+    - assets/images/pots/fut/fut10.png
+    - assets/images/pots/luchas/lucha2.png
+    - assets/images/pots/luchas/lucha3.png
+    - assets/images/pots/luchas/lucha4.png
+    - assets/images/pots/luchas/lucha6.png
+    - assets/images/pots/luchas/lucha7.png
+    - assets/images/pots/estre/estre1.png
+    - assets/images/pots/estre/estre2.png
+    - assets/images/pots/estre/estre3.png
+    - assets/images/pots/estre/estre4.png
