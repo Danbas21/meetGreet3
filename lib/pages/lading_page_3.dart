@@ -16,7 +16,7 @@ class LadingPage3 extends StatelessWidget {
 
     return SizedBox(
       width: width,
-      height: height,
+      height: height / 1.5,
       child: Stack(
         children: [
           Positioned(
@@ -159,30 +159,6 @@ class LadingPage3 extends StatelessWidget {
                                       style: TextStyle(
                                         color: Colors.black,
                                         fontSize: width / 50,
-                                        fontFamily: 'Roboto',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: width / 3.5,
-                              child: HoverContainer(
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/rectangle_3.png',
-                                      fit: BoxFit.fill,
-                                    ),
-                                    Text(
-                                      'ARTÍCULOS COLECCIONABLES',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: width / 60,
                                         fontFamily: 'Roboto',
                                         fontWeight: FontWeight.w500,
                                       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/drawer_page.dart';
+import 'package:flutter_app/pages/footer_page.dart';
 import 'package:flutter_app/utils/bar_navegacion.dart';
 import 'package:flutter_app/utils/screen_utils.dart';
 import 'package:flutter_app/utils/widget_circulo.dart';
@@ -127,7 +128,7 @@ class _ContactFormPageState extends State<ContactFormPage>
                         ? 30
                         : 10,
                 top: av == 1.0
-                    ? 160
+                    ? 100
                     : av == .65
                         ? 50
                         : 45,
@@ -144,7 +145,7 @@ class _ContactFormPageState extends State<ContactFormPage>
                               : av == .65
                                   ? 12
                                   : 10)),
-                      fontFamily: 'Arial',
+                      fontFamily: 'Roboto',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -153,7 +154,7 @@ class _ContactFormPageState extends State<ContactFormPage>
               Positioned(
                 top: height /
                     (av == 1.0
-                        ? 3
+                        ? 4
                         : av == .65
                             ? 3
                             : 3),
@@ -171,7 +172,7 @@ class _ContactFormPageState extends State<ContactFormPage>
                             animation: _animation,
                             builder: (context, child) {
                               return Transform.translate(
-                                offset: Offset(0, 10 * _animation.value),
+                                offset: Offset(0, 0),
                                 child: child,
                               );
                             },
@@ -182,7 +183,7 @@ class _ContactFormPageState extends State<ContactFormPage>
                             animation: _animation,
                             builder: (context, child) {
                               return Transform.translate(
-                                offset: Offset(0, -10 * _animation.value),
+                                offset: Offset(0, 0),
                                 child: child,
                               );
                             },
@@ -193,7 +194,7 @@ class _ContactFormPageState extends State<ContactFormPage>
                             animation: _animation,
                             builder: (context, child) {
                               return Transform.translate(
-                                offset: Offset(0, -10 * _animation.value),
+                                offset: Offset(0, 0),
                                 child: child,
                               );
                             },
@@ -204,7 +205,7 @@ class _ContactFormPageState extends State<ContactFormPage>
                             animation: _animation,
                             builder: (context, child) {
                               return Transform.scale(
-                                scale: 1.2 - 0.2 * _animation.value,
+                                scale: 1,
                                 child: child,
                               );
                             },
@@ -224,6 +225,44 @@ class _ContactFormPageState extends State<ContactFormPage>
                       ),
                     ),
                   ),
+                ),
+              ),
+              Positioned(
+                left: 30,
+                top: height /
+                    (av == 1.0
+                        ? 1.5
+                        : av == .65
+                            ? 3
+                            : 3),
+                child: SizedBox(
+                  width: width /
+                      (av == 1.0
+                          ? 1.7
+                          : av == .65
+                              ? 2
+                              : 5),
+                  height: height / 7,
+                  child: Text(
+                    'Dirección\nBoulevard Interlomas 5 Centro Urbano San Fernando. La herradura 52786 Huixquilucan. Estado de México.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 0, 0, 0),
+                        fontSize: width /
+                            (av == 1.0
+                                ? 60
+                                : av == .65
+                                    ? 40
+                                    : 52)),
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: 0,
+                child: SizedBox(
+                  width: width,
+                  height: height / 6,
+                  child: Footer(),
                 ),
               ),
             ],

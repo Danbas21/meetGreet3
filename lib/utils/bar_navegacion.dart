@@ -20,7 +20,9 @@ class BarNavi extends StatelessWidget implements PreferredSizeWidget {
     double av = ResponsiveUtil.getMultiplier(context);
 
     return AppBar(
-      backgroundColor: const Color.fromARGB(255, 231, 92, 74),
+      backgroundColor: width > 1200
+          ? const Color.fromARGB(255, 255, 252, 252)
+          : const Color.fromARGB(255, 231, 92, 74),
       elevation: 2,
       scrolledUnderElevation: 2,
       surfaceTintColor: Colors.white,
@@ -57,7 +59,7 @@ class BarNavi extends StatelessWidget implements PreferredSizeWidget {
                 child: Text(
                   'HOME',
                   style: TextStyle(
-                    color: Colors.black12,
+                    color: const Color.fromARGB(255, 12, 12, 12),
                     fontSize: width /
                         (av == 1.0
                             ? 90
@@ -80,7 +82,7 @@ class BarNavi extends StatelessWidget implements PreferredSizeWidget {
                 child: Text(
                   '¿QUÉ ES?',
                   style: TextStyle(
-                    color: Colors.black12,
+                    color: const Color.fromARGB(255, 12, 12, 12),
                     fontSize: width /
                         (av == 1.0
                             ? 90
@@ -103,7 +105,7 @@ class BarNavi extends StatelessWidget implements PreferredSizeWidget {
                 child: Text(
                   'INVITADOS',
                   style: TextStyle(
-                    color: Colors.black12,
+                    color: const Color.fromARGB(255, 12, 12, 12),
                     fontSize: width /
                         (av == 1.0
                             ? 90
@@ -126,7 +128,7 @@ class BarNavi extends StatelessWidget implements PreferredSizeWidget {
                 child: Text(
                   'HORARIOS',
                   style: TextStyle(
-                    color: Colors.black12,
+                    color: const Color.fromARGB(255, 12, 12, 12),
                     fontSize: width /
                         (av == 1.0
                             ? 90

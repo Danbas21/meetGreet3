@@ -395,6 +395,9 @@ class ListInvites extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
+                        height: 10,
+                      ),
+                      SizedBox(
                         width: width,
                         height: height / 5.5,
                         child: Footer(),

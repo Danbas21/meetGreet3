@@ -4,10 +4,12 @@ import 'package:flutter_app/utils/screen_utils.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Footer extends StatelessWidget {
+  const Footer({super.key});
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+
     double av = ResponsiveUtil.getMultiplier(context);
     return Container(
       width: width,

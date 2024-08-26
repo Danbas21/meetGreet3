@@ -216,46 +216,6 @@ class _SchedulePageState extends State<SchedulePage> {
                           padding: EdgeInsets.all(av == 1.0 ? 8.0 : 16.0),
                           child: Container(
                             width: width / 1.05,
-                            height: height / (av == .45 ? 3 : 1.8),
-                            child: Stack(
-                              children: [
-                                Positioned(
-                                  top: 0,
-                                  left: 0,
-                                  child: Container(
-                                    width: width / 1.02,
-                                    height: height /
-                                        (av == 1.0
-                                            ? 1.8
-                                            : av == .65
-                                                ? 1.8
-                                                : 3),
-                                    child: Image.asset(
-                                      'assets/images/horarios1.png',
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                ),
-                                Positioned(
-                                  bottom: 0,
-                                  right: 0,
-                                  child: IconButton(
-                                    icon: Icon(Icons.add_circle,
-                                        color: const Color.fromARGB(
-                                            255, 226, 172, 10),
-                                        size: width / 20),
-                                    onPressed: () => _showPopup(
-                                        context, 'assets/images/horarios1.png'),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(av == 1.0 ? 8.0 : 16.0),
-                          child: Container(
-                            width: width / 1.05,
                             height: height /
                                 (av == 1.0
                                     ? 1.8
@@ -295,6 +255,46 @@ class _SchedulePageState extends State<SchedulePage> {
                                 ),
                               ),
                             ]),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(av == 1.0 ? 8.0 : 16.0),
+                          child: Container(
+                            width: width / 1.05,
+                            height: height / (av == .45 ? 3 : 1.8),
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  top: 0,
+                                  left: 0,
+                                  child: Container(
+                                    width: width / 1.02,
+                                    height: height /
+                                        (av == 1.0
+                                            ? 1.8
+                                            : av == .65
+                                                ? 1.8
+                                                : 3),
+                                    child: Image.asset(
+                                      'assets/images/horarios1.png',
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  bottom: 0,
+                                  right: 0,
+                                  child: IconButton(
+                                    icon: Icon(Icons.add_circle,
+                                        color: const Color.fromARGB(
+                                            255, 226, 172, 10),
+                                        size: width / 20),
+                                    onPressed: () => _showPopup(
+                                        context, 'assets/images/horarios1.png'),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
