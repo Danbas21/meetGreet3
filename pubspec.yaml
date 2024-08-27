@@ -20,6 +20,7 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   google_fonts: ^6.2.1
   intl: ^0.19.0
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_lints: ^3.0.0
@@ -117,3 +118,5 @@ flutter:
     - assets/images/pots/estre/estre2.png
     - assets/images/pots/estre/estre3.png
     - assets/images/pots/estre/estre4.png
+    - assets/images/load.gif
+    - assets/images/losniños.png

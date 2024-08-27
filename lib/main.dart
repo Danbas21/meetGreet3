@@ -219,6 +219,11 @@ class ResponsiveZoomableWebPage extends StatelessWidget {
                     right: 10,
                     child: ConstantBounceButton(),
                   ),
+                  Positioned(
+                    top: width / 2.5,
+                    left: 20,
+                    child: Image.asset('assets/images/losniños.png'),
+                  ),
                 ],
               ),
             ),
@@ -365,6 +370,14 @@ class ResponsiveZoomableWebPage extends StatelessWidget {
                 right: 10,
                 child: SizedBox(
                     width: 200, height: 70, child: ConstantBounceButton()),
+              ),
+              Positioned(
+                bottom: 10,
+                right: 10,
+                child: SizedBox(
+                    height: 200,
+                    width: 300,
+                    child: Image.asset('assets/images/losniños.png')),
               ),
             ],
           ),
@@ -842,10 +855,18 @@ class ResponsiveZoomableWebPage extends StatelessWidget {
                 ),
               ),
               const Positioned(
-                bottom: 10,
+                bottom: 0,
                 right: 10,
                 child: SizedBox(
                     width: 200, height: 70, child: ConstantBounceButton()),
+              ),
+              Positioned(
+                bottom: 10,
+                left: 15,
+                child: SizedBox(
+                    height: 100,
+                    width: 100,
+                    child: Image.asset('assets/images/losniños.png')),
               ),
             ],
           ),

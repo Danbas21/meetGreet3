@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/utils/grid_gallery/staggered.dart';
+import 'package:provider/provider.dart';
 
 class HoverContainer extends StatefulWidget {
   final Widget child;
@@ -18,9 +19,13 @@ class HoverContainerState extends State<HoverContainer> {
     return GestureDetector(
       onTap: () {
         Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const StaggeredPage()),
-        );
+            context,
+            MaterialPageRoute(
+              builder: (context) => ChangeNotifierProvider(
+                create: (context) => DataState(),
+                child: const StaggeredPage(),
+              ),
+            ));
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/utils/bar_navegacion.dart';
 
 const _defaultColor = Color(0xFF34568B);
 
@@ -17,9 +18,7 @@ class AppScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
+      appBar: BarNavi(),
       body: Padding(
         padding: EdgeInsets.only(top: topPadding),
         child: child,
