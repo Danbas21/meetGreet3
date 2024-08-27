@@ -6,8 +6,21 @@ import 'package:flutter_app/utils/screen_utils.dart';
 import 'package:flutter_app/utils/widget_circulo.dart';
 import 'package:flutter_app/utils/widget_grid_cir.dart';
 
-class WhatIsPage extends StatelessWidget {
+class WhatIsPage extends StatefulWidget {
   const WhatIsPage({super.key});
+
+  @override
+  State<WhatIsPage> createState() => _WhatIsPageState();
+}
+
+class _WhatIsPageState extends State<WhatIsPage> {
+  bool _isDrawerOpen = false;
+
+  void _toggleDrawer() {
+    setState(() {
+      _isDrawerOpen = !_isDrawerOpen;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +32,7 @@ class WhatIsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: const BarNavi(),
-      drawer: width < 1100 ? const AppDrawer() : null,
+      drawer: width < 1100 ? AppDrawer() : null,
       body: SizedBox(
         width: width,
         height: height,

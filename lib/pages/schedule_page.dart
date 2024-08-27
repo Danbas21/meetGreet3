@@ -15,6 +15,14 @@ class SchedulePage extends StatefulWidget {
 }
 
 class _SchedulePageState extends State<SchedulePage> {
+  bool _isDrawerOpen = false;
+
+  void _toggleDrawer() {
+    setState(() {
+      _isDrawerOpen = !_isDrawerOpen;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double multiplier = ResponsiveUtil.getMultiplier(context);
@@ -58,7 +66,7 @@ class _SchedulePageState extends State<SchedulePage> {
 
     return Scaffold(
         appBar: const BarNavi(),
-        drawer: width < 1100 ? const AppDrawer() : null,
+        drawer: width < 1100 ? AppDrawer() : null,
         body: SingleChildScrollView(
           child: SizedBox(
             width: width,

@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter_app/pages/drawer_page.dart';
 import 'package:flutter_app/pages/footer_page.dart';
 import 'package:flutter_app/pages/lading_page.dart';
@@ -10,12 +9,10 @@ import 'package:flutter_app/utils/animation_main.dart';
 import 'package:flutter_app/utils/animation_text.dart';
 import 'package:flutter_app/utils/bar_navegacion.dart';
 import 'package:flutter_app/utils/hover_animation.dart';
-
 import 'package:flutter_app/utils/time_regre.dart';
 import 'package:flutter_app/utils/utils_list.dart';
 import 'package:flutter_app/utils/widget_button.dart';
 import 'package:flutter_app/utils/widget_circulo.dart';
-
 import 'package:flutter_app/utils/invite_grid.dart';
 import 'package:flutter_app/utils/list_images.dart';
 
@@ -27,6 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Meet & Greet Experience',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -39,7 +37,7 @@ class MyApp extends StatelessWidget {
 
 enum Section { one, two, three }
 
-class ResponsiveZoomableWebPage extends StatelessWidget {
+class ResponsiveZoomableWebPage extends StatefulWidget {
   static const double wideBreakpoint = 1200;
   static const double mediumBreakpoint = 600;
 
@@ -48,11 +46,26 @@ class ResponsiveZoomableWebPage extends StatelessWidget {
   const ResponsiveZoomableWebPage({super.key, this.numberOfSections = 1});
 
   @override
+  State<ResponsiveZoomableWebPage> createState() =>
+      _ResponsiveZoomableWebPageState();
+}
+
+class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
+  bool _isDrawerOpen = false;
+
+  void _toggleDrawer() {
+    setState(() {
+      _isDrawerOpen = !_isDrawerOpen;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: const BarNavi(),
-      drawer: width < wideBreakpoint ? const AppDrawer() : null,
+      drawer:
+          width < ResponsiveZoomableWebPage.wideBreakpoint ? AppDrawer() : null,
       body: OrientationBuilder(
         builder: (context, orientation) {
           return LayoutBuilder(
@@ -92,10 +105,12 @@ class ResponsiveZoomableWebPage extends StatelessWidget {
 
   Widget _buildResponsiveContent(double screenWidth, bool isPortrait, context) {
     // Ajustamos los breakpoints basados en la orientación
-    final adjustedWideBreakpoint =
-        isPortrait ? wideBreakpoint : wideBreakpoint * 0.75;
-    final adjustedMediumBreakpoint =
-        isPortrait ? mediumBreakpoint : mediumBreakpoint * 0.75;
+    final adjustedWideBreakpoint = isPortrait
+        ? ResponsiveZoomableWebPage.wideBreakpoint
+        : ResponsiveZoomableWebPage.wideBreakpoint * 0.75;
+    final adjustedMediumBreakpoint = isPortrait
+        ? ResponsiveZoomableWebPage.mediumBreakpoint
+        : ResponsiveZoomableWebPage.mediumBreakpoint * 0.75;
 
     if (screenWidth > adjustedWideBreakpoint) {
       return _buildWideLayout(context);
@@ -283,7 +298,7 @@ class ResponsiveZoomableWebPage extends StatelessWidget {
           width: width,
           height: height / 2,
           decoration: const BoxDecoration(
-            color: Color.fromARGB(26, 163, 224, 217),
+            color: Color.fromARGB(255, 240, 252, 251),
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10)),
           ),
           child: Stack(
@@ -772,7 +787,7 @@ class ResponsiveZoomableWebPage extends StatelessWidget {
           width: width,
           height: height / 2,
           decoration: const BoxDecoration(
-            color: Color.fromARGB(26, 163, 224, 217),
+            color: Color.fromARGB(255, 245, 251, 250),
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10)),
           ),
           child: Stack(

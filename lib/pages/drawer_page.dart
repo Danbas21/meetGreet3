@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/main.dart';
-
 import 'package:flutter_app/pages/invite_page.dart';
-
 import 'package:flutter_app/pages/schedule_page.dart';
 import 'package:flutter_app/pages/whatis_page.dart';
-
 import 'package:flutter_app/utils/screen_utils.dart';
 
 class AppDrawer extends StatefulWidget {
@@ -24,17 +21,22 @@ class _AppDrawerState extends State<AppDrawer>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 500),
       vsync: this,
     );
 
     _offsetAnimation = Tween<Offset>(
-      begin: const Offset(0, 0),
-      end: const Offset(20, 20),
+      begin:
+          const Offset(3.0, 0.0), // Comienza fuera de la pantalla a la derecha
+      end: const Offset(0.0, 0.0),
     ).animate(CurvedAnimation(
       parent: _controller,
-      curve: Curves.bounceInOut,
+      curve: Curves.easeInCubic,
     ));
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _controller.forward();
+    });
   }
 
   @override
@@ -53,129 +55,88 @@ class _AppDrawerState extends State<AppDrawer>
       builder: (context, child) {
         return SlideTransition(
           position: _offsetAnimation,
-          transformHitTests: true,
-          child: SizedBox(
-            width: width / 2,
-            height: height / 1,
-            child: Drawer(
-              child: ListView(
-                children: <Widget>[
-                  SizedBox(
-                    height: height / 10,
-                    child: DrawerHeader(
-                      decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 231, 92, 74),
-                      ),
-                      child: Text(
-                        'Menú',
-                        style: TextStyle(
-                          color: const Color.fromARGB(255, 255, 255, 255),
-                          fontSize: width /
-                              (av == 1.0
-                                  ? 90
-                                  : av == .65
-                                      ? 40
-                                      : 35),
-                          fontWeight: FontWeight.bold,
+          child: Align(
+            alignment: Alignment.topRight,
+            child: SizedBox(
+              width: width / 2,
+              height: height,
+              child: Drawer(
+                elevation: 2,
+                child: ListView(
+                  children: <Widget>[
+                    SizedBox(
+                      height: height / 10,
+                      child: DrawerHeader(
+                        decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 231, 92, 74),
+                        ),
+                        child: Text(
+                          'Menú',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: width /
+                                (av == 1.0
+                                    ? 90
+                                    : av == .65
+                                        ? 40
+                                        : 35),
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  ListTile(
-                    title: Text(
+                    _buildListTile(
+                      context,
                       'HOME',
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: width /
-                            (av == 1.0
-                                ? 90
-                                : av == .65
-                                    ? 40
-                                    : 35),
-                        fontWeight: FontWeight.bold,
-                      ),
+                      ResponsiveZoomableWebPage(),
                     ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ResponsiveZoomableWebPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  ListTile(
-                    title: Text(
+                    _buildListTile(
+                      context,
                       '¿QUÉ ES?',
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: width /
-                            (av == 1.0
-                                ? 90
-                                : av == .65
-                                    ? 40
-                                    : 35),
-                        fontWeight: FontWeight.bold,
-                      ),
+                      const WhatIsPage(),
                     ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const WhatIsPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  ListTile(
-                    title: Text(
+                    _buildListTile(
+                      context,
                       'INVITADOS',
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: width /
-                            (av == 1.0
-                                ? 90
-                                : av == .65
-                                    ? 40
-                                    : 35),
-                        fontWeight: FontWeight.bold,
-                      ),
+                      const ListInvites(),
                     ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ListInvites(),
-                        ),
-                      );
-                    },
-                  ),
-                  ListTile(
-                    title: Text(
+                    _buildListTile(
+                      context,
                       'HORARIOS',
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: width /
-                            (av == 1.0
-                                ? 90
-                                : av == .65
-                                    ? 40
-                                    : 35),
-                        fontWeight: FontWeight.bold,
-                      ),
+                      SchedulePage(),
                     ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SchedulePage(),
-                        ),
-                      );
-                    },
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildListTile(BuildContext context, String title, Widget page) {
+    final double width = MediaQuery.of(context).size.width;
+    final double av = ResponsiveUtil.getMultiplier(context);
+    return ListTile(
+      title: Text(
+        title,
+        style: TextStyle(
+          color: Colors.black87,
+          fontSize: width /
+              (av == 1.0
+                  ? 90
+                  : av == .65
+                      ? 40
+                      : 35),
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => page,
           ),
         );
       },

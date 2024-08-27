@@ -17,6 +17,14 @@ class _ContactFormPageState extends State<ContactFormPage>
   late AnimationController _controller;
   late Animation<double> _animation;
 
+  bool _isDrawerOpen = false;
+
+  void _toggleDrawer() {
+    setState(() {
+      _isDrawerOpen = !_isDrawerOpen;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -44,7 +52,7 @@ class _ContactFormPageState extends State<ContactFormPage>
 
     return Scaffold(
       appBar: const BarNavi(),
-      drawer: width < 1024 ? const AppDrawer() : null,
+      drawer: width < 1024 ? AppDrawer() : null,
       body: SingleChildScrollView(
         child: SizedBox(
           width: width,

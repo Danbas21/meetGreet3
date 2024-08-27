@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_app/utils/animation_main.dart';
 
-import 'package:flutter_app/utils/screen_utils.dart';
 import 'package:flutter_app/utils/time_regre.dart';
 import 'package:flutter_app/utils/widget_circulo.dart';
 import 'package:flutter_app/utils/widget_grid_cir.dart';
@@ -14,7 +13,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    double av = ResponsiveUtil.getMultiplier(context);
+    final double av = ResponsiveUtil.getMultiplier(context);
 
     double spaceElement = av == 1.0
         ? 8.2
@@ -226,5 +225,30 @@ class HomePage extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class ResponsiveUtil {
+  static bool isMobile(BuildContext context) {
+    return MediaQuery.of(context).size.width <= 630;
+  }
+
+  static bool isTablet(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return width > 630 && width < 1100;
+  }
+
+  static bool isDesktop(BuildContext context) {
+    return MediaQuery.of(context).size.width >= 1100;
+  }
+
+  static double getMultiplier(BuildContext context) {
+    if (isMobile(context)) {
+      return 0.45;
+    } else if (isTablet(context)) {
+      return 0.65;
+    } else {
+      return 1.0;
+    }
   }
 }

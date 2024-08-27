@@ -8,11 +8,24 @@ import 'package:flutter_app/utils/screen_utils.dart';
 import 'package:flutter_app/utils/widget_circulo.dart';
 import 'package:flutter_app/utils/widget_grid_cir.dart';
 
-class ListInvites extends StatelessWidget {
+class ListInvites extends StatefulWidget {
   const ListInvites({super.key});
 
   @override
+  State<ListInvites> createState() => _ListInvitesState();
+}
+
+class _ListInvitesState extends State<ListInvites> {
+  @override
   Widget build(BuildContext context) {
+    bool _isDrawerOpen = false;
+
+    void _toggleDrawer() {
+      setState(() {
+        _isDrawerOpen = !_isDrawerOpen;
+      });
+    }
+
     double multiplier = ResponsiveUtil.getMultiplier(context);
 
     final height = MediaQuery.of(context).size.height;
@@ -43,7 +56,7 @@ class ListInvites extends StatelessWidget {
 
     return Scaffold(
       appBar: const BarNavi(),
-      drawer: width < 1100 ? const AppDrawer() : null,
+      drawer: width < 1100 ? AppDrawer() : null,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
