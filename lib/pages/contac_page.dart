@@ -165,7 +165,7 @@ class _ContactFormPageState extends State<ContactFormPage>
                         ? 4
                         : av == .65
                             ? 3
-                            : 3),
+                            : 6),
                 right: .1,
                 child: SizedBox(
                   width: width,
@@ -236,20 +236,20 @@ class _ContactFormPageState extends State<ContactFormPage>
                 ),
               ),
               Positioned(
-                left: 30,
+                left: 20,
                 top: height /
                     (av == 1.0
                         ? 1.5
                         : av == .65
                             ? 3
-                            : 3),
+                            : 1.5),
                 child: SizedBox(
                   width: width /
                       (av == 1.0
                           ? 1.7
                           : av == .65
                               ? 2
-                              : 5),
+                              : 1),
                   height: height / 7,
                   child: Text(
                     'Dirección\nBoulevard Interlomas 5 Centro Urbano San Fernando. La herradura 52786 Huixquilucan. Estado de México.',
@@ -261,7 +261,7 @@ class _ContactFormPageState extends State<ContactFormPage>
                                 ? 60
                                 : av == .65
                                     ? 40
-                                    : 52)),
+                                    : 30)),
                   ),
                 ),
               ),

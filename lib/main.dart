@@ -15,8 +15,13 @@ import 'package:flutter_app/utils/widget_button.dart';
 import 'package:flutter_app/utils/widget_circulo.dart';
 import 'package:flutter_app/utils/invite_grid.dart';
 import 'package:flutter_app/utils/list_images.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -230,14 +235,17 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
                     ),
                   ),
                   Positioned(
-                    top: width / 4,
+                    top: width / 3,
                     right: 10,
-                    child: ConstantBounceButton(),
+                    child: SizedBox(width: 350, child: ConstantBounceButton()),
                   ),
                   Positioned(
-                    top: width / 2.5,
-                    left: 20,
-                    child: Image.asset('assets/images/losniños.png'),
+                    top: width / 4.5,
+                    left: 10,
+                    child: SizedBox(
+                        width: width / 4,
+                        height: height / 2,
+                        child: Image.asset('assets/images/losniños.png')),
                   ),
                 ],
               ),
@@ -803,10 +811,10 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
               ),
               Positioned(
                 left: 5,
-                top: 10,
+                top: 8,
                 child: SizedBox(
-                  width: 90,
-                  height: 90,
+                  width: 70,
+                  height: 70,
                   child: Image.asset(
                     'assets/images/rectangle_16.png',
                     fit: BoxFit.contain,
@@ -815,14 +823,14 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
               ),
               Positioned(
                 left: 10,
-                top: width / 4,
+                top: width / 4.5,
                 child: SizedBox(
                   width: width,
                   height: 200,
                   child: AnimationMainText(
                       img: "EXPO REFORMA,CDMX 26 - 27 OCTUBRE 2024",
                       wiseAnimation: 4,
-                      fontSized: width / 30,
+                      fontSized: width / 40,
                       fontWeight: FontWeight.w400,
                       letterSpacing: 1),
                 ),
@@ -836,13 +844,13 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
                   child: AnimationMainText(
                       img: "MEET & GREET",
                       wiseAnimation: 400,
-                      fontSized: width / 7,
+                      fontSized: width / 10,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 0),
                 ),
               ),
               Positioned(
-                top: width / 2.3,
+                top: width / 2.8,
                 left: 10,
                 child: SizedBox(
                   width: width,
@@ -850,13 +858,13 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
                   child: AnimationMainText(
                       img: "EXPERIENCE",
                       wiseAnimation: -300,
-                      fontSized: width / 7,
+                      fontSized: width / 10,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 0),
                 ),
               ),
               Positioned(
-                top: width / 1.6,
+                top: width / 2.2,
                 left: 10,
                 child: SizedBox(
                   width: width,
@@ -864,23 +872,23 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
                   child: AnimationMainText(
                       img: "2024",
                       wiseAnimation: 400,
-                      fontSized: width / 7,
+                      fontSized: width / 10,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 0),
                 ),
               ),
               const Positioned(
-                bottom: 0,
+                bottom: 15,
                 right: 10,
                 child: SizedBox(
-                    width: 200, height: 70, child: ConstantBounceButton()),
+                    width: 170, height: 60, child: ConstantBounceButton()),
               ),
               Positioned(
                 bottom: 10,
                 left: 15,
                 child: SizedBox(
-                    height: 100,
-                    width: 100,
+                    height: 140,
+                    width: 140,
                     child: Image.asset('assets/images/losniños.png')),
               ),
             ],

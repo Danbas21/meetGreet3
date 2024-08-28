@@ -18,12 +18,10 @@ class HoverContainerState extends State<HoverContainer> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-          Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const GalleryGridStaggered()),
-                  );
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const GalleryGridStaggered()),
+        );
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),

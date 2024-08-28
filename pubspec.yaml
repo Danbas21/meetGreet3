@@ -9,10 +9,13 @@ environment:
 
 dependencies:
   auto_size_text: ^3.0.0
+  cached_network_image: ^3.4.0
   carousel_slider: ^5.0.0
+  cloud_firestore: ^5.3.0
   cupertino_icons: ^1.0.6
   firebase_analytics: ^11.1.0
   firebase_core: ^3.1.1
+  firebase_storage: ^12.2.0
   flutter:
     sdk: flutter
   flutter_staggered_grid_view: ^0.6.2
@@ -120,3 +123,76 @@ flutter:
     - assets/images/pots/estre/estre4.png
     - assets/images/load.gif
     - assets/images/losniños.png
+    - assets/images/gallery/meet1.jpg
+    - assets/images/gallery/meet2.jpg
+    - assets/images/gallery/meet3.jpg
+    - assets/images/gallery/meet4.jpg
+    - assets/images/gallery/meet5.jpg
+    - assets/images/gallery/meet6.jpg
+    - assets/images/gallery/meet7.jpg
+    - assets/images/gallery/meet8.jpg
+    - assets/images/gallery/meet9.jpg
+    - assets/images/gallery/meet11.png
+    - assets/images/gallery/meet13.jpg
+    - assets/images/gallery/meet14.jpg
+    - assets/images/gallery/meet15.jpg
+    - assets/images/gallery/meet16.jpg
+    - assets/images/gallery/meet17.jpg
+    - assets/images/gallery/meet18.jpg
+    - assets/images/gallery/meet19.jpg
+    - assets/images/gallery/meet20.jpg
+    - assets/images/gallery/meet21.jpg
+    - assets/images/gallery/meet22.jpg
+    - assets/images/gallery/meet23.jpg
+    - assets/images/gallery/meet24.jpg
+    - assets/images/gallery/meet25.jpg
+    - assets/images/gallery/meet26.jpg
+    - assets/images/gallery/meet27.jpg
+    - assets/images/gallery/meet28.jpg
+    - assets/images/gallery/meet29.jpg
+    - assets/images/gallery/meet30.jpg
+    - assets/images/gallery/meet31.jpg
+    - assets/images/gallery/meet32.jpg
+    - assets/images/gallery/meet33.jpg
+    - assets/images/gallery/meet34.jpg
+    - assets/images/gallery/meet35.jpg
+    - assets/images/gallery/meet36.jpg
+    - assets/images/gallery/meet37.jpg
+    - assets/images/gallery/meet38.jpg
+    - assets/images/gallery/meet39.jpg
+    - assets/images/gallery/meet40.jpg
+    - assets/images/gallery/meet41.jpg
+    - assets/images/gallery/meet42.jpg
+    - assets/images/gallery/meet43.jpg
+    - assets/images/gallery/meet44.jpg
+    - assets/images/gallery/meet45.jpg
+    - assets/images/gallery/meet46.jpg
+    - assets/images/gallery/meet47.jpg
+    - assets/images/gallery/meet48.jpg
+    - assets/images/gallery/meet49.jpg
+    - assets/images/gallery/meet50.jpg
+    - assets/images/gallery/meet51.jpg
+    - assets/images/gallery/meet52.jpg
+    - assets/images/gallery/meet53.jpg
+    - assets/images/gallery/meet54.jpg
+    - assets/images/gallery/meet55.jpg
+    - assets/images/gallery/meet56.jpg
+    - assets/images/gallery/meet57.jpg
+    - assets/images/gallery/meet58.jpg
+    - assets/images/gallery/meet59.jpg
+    - assets/images/gallery/meet60.jpg
+    - assets/images/gallery/meet61.jpg
+    - assets/images/gallery/meet62.jpg
+    - assets/images/gallery/meet63.jpg
+    - assets/images/gallery/meet64.jpg
+    - assets/images/gallery/meet65.jpg
+    - assets/images/gallery/meet66.jpg
+    - assets/images/gallery/meet67.jpg
+    - assets/images/gallery/meet68.jpg
+    - assets/images/gallery/meet69.jpg
+    - assets/images/gallery/meet70.jpg
+    - assets/images/gallery/meet71.jpg
+    - assets/images/gallery/meet72.jpg
+    - assets/images/gallery/meet73.jpg
+    - assets/images/gallery/meet74.jpg
+    - assets/images/gallery/meet75.jpg

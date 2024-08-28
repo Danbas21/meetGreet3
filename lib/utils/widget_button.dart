@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/pages/pasarela_pagos.dart';
+import 'package:flutter_app/utils/screen_utils.dart';
 
 class ConstantBounceButton extends StatefulWidget {
   const ConstantBounceButton({super.key});
@@ -30,24 +32,33 @@ class ConstantBounceButtonState extends State<ConstantBounceButton>
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    final double av = ResponsiveUtil.getMultiplier(context);
+
     return ScaleTransition(
       scale: _animation,
       child: GestureDetector(
         onTap: () {
-          // Acción al tocar el botón si es necesario
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => PaymentGatewayScreen(),
+            ),
+          );
         },
         child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           decoration: BoxDecoration(
             color: const Color.fromARGB(255, 231, 92, 74),
             borderRadius: BorderRadius.circular(8),
           ),
-          child: const Text(
-            'Compra tus boletos',
+          child: Text(
+            'Compra\ntus boletos',
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: Color.fromARGB(255, 255, 255, 255),
-                fontSize: 15,
+                fontSize: width / (av == 1.0 ? 45 : 35),
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Roboto'),
           ),

@@ -20,6 +20,7 @@ class BarNavi extends StatelessWidget implements PreferredSizeWidget {
     double av = ResponsiveUtil.getMultiplier(context);
 
     return AppBar(
+        leading: null,
         backgroundColor: const Color.fromARGB(255, 245, 251, 250),
         elevation: 2,
         scrolledUnderElevation: 2,
@@ -120,16 +121,16 @@ class BarNavi extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ]
             : [
-                IconButton(
-                  color: const Color.fromARGB(255, 255, 6, 6),
-                  icon: const Icon(
-                    Icons.menu_sharp,
-                    size: 30,
-                  ),
-                  onPressed: () {
-                    Scaffold.of(context).openDrawer();
-                  },
-                )
+                // IconButton(
+                //   color: const Color.fromARGB(255, 255, 6, 6),
+                //   icon: const Icon(
+                //     Icons.menu_sharp,
+                //     size: 30,
+                //   ),
+                //   onPressed: () {
+                //     Scaffold.of(context).openDrawer();
+                //   },
+                // )
               ]);
 
     // actions: width > 1200
