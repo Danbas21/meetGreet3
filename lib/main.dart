@@ -83,10 +83,11 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
                   // Contenido principal
                   Expanded(
                     child: InteractiveViewer(
-                      clipBehavior: Clip.antiAlias,
-                      boundaryMargin: const EdgeInsets.all(20),
-                      minScale: 1.0,
-                      maxScale: 5,
+                      constrained: false,
+                      scaleEnabled: false,
+                      transformationController: TransformationController(),
+                      boundaryMargin: const EdgeInsets.all(double.infinity),
+                      maxScale: 5.0,
                       child: SingleChildScrollView(
                         child: ConstrainedBox(
                           constraints:
@@ -237,7 +238,8 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
                   Positioned(
                     top: width / 3,
                     right: 10,
-                    child: SizedBox(width: 350, child: ConstantBounceButton()),
+                    child: const SizedBox(
+                        width: 280, child: ConstantBounceButton()),
                   ),
                   Positioned(
                     top: width / 4.5,

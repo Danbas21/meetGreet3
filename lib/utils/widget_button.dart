@@ -57,8 +57,8 @@ class ConstantBounceButtonState extends State<ConstantBounceButton>
             'Compra\ntus boletos',
             textAlign: TextAlign.center,
             style: TextStyle(
-                color: Color.fromARGB(255, 255, 255, 255),
-                fontSize: width / (av == 1.0 ? 45 : 35),
+                color: const Color.fromARGB(255, 255, 255, 255),
+                fontSize: width / (av == 1.0 ? 50 : 40),
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Roboto'),
           ),
