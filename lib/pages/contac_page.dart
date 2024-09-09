@@ -7,6 +7,8 @@ import 'package:flutter_app/utils/widget_circulo.dart';
 import 'package:flutter_app/utils/widget_grid_cir.dart';
 
 class ContactFormPage extends StatefulWidget {
+  const ContactFormPage({super.key});
+
   @override
   _ContactFormPageState createState() => _ContactFormPageState();
 }
@@ -52,7 +54,7 @@ class _ContactFormPageState extends State<ContactFormPage>
 
     return Scaffold(
       appBar: const BarNavi(),
-      drawer: width < 1024 ? AppDrawer() : null,
+      drawer: width < 1024 ? const AppDrawer() : null,
       body: SingleChildScrollView(
         child: SizedBox(
           width: width,
@@ -180,7 +182,7 @@ class _ContactFormPageState extends State<ContactFormPage>
                             animation: _animation,
                             builder: (context, child) {
                               return Transform.translate(
-                                offset: Offset(0, 0),
+                                offset: const Offset(0, 0),
                                 child: child,
                               );
                             },
@@ -191,24 +193,24 @@ class _ContactFormPageState extends State<ContactFormPage>
                             animation: _animation,
                             builder: (context, child) {
                               return Transform.translate(
-                                offset: Offset(0, 0),
+                                offset: const Offset(0, 0),
                                 child: child,
                               );
                             },
                             child: _buildTextField('Correo Electrónico'),
                           ),
-                          SizedBox(height: 16),
+                          const SizedBox(height: 16),
                           AnimatedBuilder(
                             animation: _animation,
                             builder: (context, child) {
                               return Transform.translate(
-                                offset: Offset(0, 0),
+                                offset: const Offset(0, 0),
                                 child: child,
                               );
                             },
                             child: _buildTextField('Descripción', maxLines: 5),
                           ),
-                          SizedBox(height: 32),
+                          const SizedBox(height: 32),
                           AnimatedBuilder(
                             animation: _animation,
                             builder: (context, child) {
@@ -221,12 +223,12 @@ class _ContactFormPageState extends State<ContactFormPage>
                               onPressed: () {
                                 if (_formKey.currentState!.validate()) {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
+                                    const SnackBar(
                                         content: Text('Enviando comentarios')),
                                   );
                                 }
                               },
-                              child: Text('Enviar'),
+                              child: const Text('Enviar'),
                             ),
                           ),
                         ],
@@ -270,7 +272,7 @@ class _ContactFormPageState extends State<ContactFormPage>
                 child: SizedBox(
                   width: width,
                   height: height / 6,
-                  child: Footer(),
+                  child: const Footer(),
                 ),
               ),
             ],
@@ -283,7 +285,7 @@ class _ContactFormPageState extends State<ContactFormPage>
   Widget _buildTextField(String label, {int maxLines = 1}) {
     return TextFormField(
       decoration: InputDecoration(
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
         labelText: label,
       ),
       maxLines: maxLines,

@@ -37,7 +37,7 @@ class _SchedulePageState extends State<SchedulePage> {
             ? 1.4
             : 1.1;
 
-    void _showPopup(BuildContext context, String frontImage) {
+    void showPopup(BuildContext context, String frontImage) {
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -66,7 +66,7 @@ class _SchedulePageState extends State<SchedulePage> {
 
     return Scaffold(
         appBar: const BarNavi(),
-        drawer: width < 1100 ? AppDrawer() : null,
+        drawer: width < 1100 ? const AppDrawer() : null,
         body: SingleChildScrollView(
           child: SizedBox(
             width: width,
@@ -222,7 +222,7 @@ class _SchedulePageState extends State<SchedulePage> {
                         ),
                         Padding(
                           padding: EdgeInsets.all(av == 1.0 ? 8.0 : 16.0),
-                          child: Container(
+                          child: SizedBox(
                             width: width / 1.05,
                             height: height /
                                 (av == 1.0
@@ -234,7 +234,7 @@ class _SchedulePageState extends State<SchedulePage> {
                               Positioned(
                                 top: 0,
                                 left: 0,
-                                child: Container(
+                                child: SizedBox(
                                   width: width / 1.02,
                                   height: height /
                                       (av == 1.0
@@ -256,7 +256,7 @@ class _SchedulePageState extends State<SchedulePage> {
                                       color: const Color.fromARGB(
                                           255, 226, 172, 10),
                                       size: width / 20),
-                                  onPressed: () => _showPopup(
+                                  onPressed: () => showPopup(
                                     context,
                                     'assets/images/horarios2.png',
                                   ),
@@ -267,7 +267,7 @@ class _SchedulePageState extends State<SchedulePage> {
                         ),
                         Padding(
                           padding: EdgeInsets.all(av == 1.0 ? 8.0 : 16.0),
-                          child: Container(
+                          child: SizedBox(
                             width: width / 1.05,
                             height: height / (av == .45 ? 3 : 1.8),
                             child: Stack(
@@ -275,7 +275,7 @@ class _SchedulePageState extends State<SchedulePage> {
                                 Positioned(
                                   top: 0,
                                   left: 0,
-                                  child: Container(
+                                  child: SizedBox(
                                     width: width / 1.02,
                                     height: height /
                                         (av == 1.0
@@ -297,7 +297,7 @@ class _SchedulePageState extends State<SchedulePage> {
                                         color: const Color.fromARGB(
                                             255, 226, 172, 10),
                                         size: width / 20),
-                                    onPressed: () => _showPopup(
+                                    onPressed: () => showPopup(
                                         context, 'assets/images/horarios1.png'),
                                   ),
                                 ),
@@ -314,7 +314,7 @@ class _SchedulePageState extends State<SchedulePage> {
                   child: SizedBox(
                     width: width,
                     height: height / 6,
-                    child: Footer(),
+                    child: const Footer(),
                   ),
                 ),
               ],

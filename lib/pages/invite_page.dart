@@ -18,11 +18,11 @@ class ListInvites extends StatefulWidget {
 class _ListInvitesState extends State<ListInvites> {
   @override
   Widget build(BuildContext context) {
-    bool _isDrawerOpen = false;
+    bool isDrawerOpen = false;
 
-    void _toggleDrawer() {
+    void toggleDrawer() {
       setState(() {
-        _isDrawerOpen = !_isDrawerOpen;
+        isDrawerOpen = !isDrawerOpen;
       });
     }
 
@@ -56,7 +56,7 @@ class _ListInvitesState extends State<ListInvites> {
 
     return Scaffold(
       appBar: const BarNavi(),
-      drawer: width < 1100 ? AppDrawer() : null,
+      drawer: width < 1100 ? const AppDrawer() : null,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -81,7 +81,7 @@ class _ListInvitesState extends State<ListInvites> {
                   child: SizedBox(
                     width: 145 * multiplier,
                     height: 80 * multiplier,
-                    child: CirculosEnGrid(),
+                    child: const CirculosEnGrid(),
                   ),
                 ),
                 Positioned(
@@ -136,7 +136,7 @@ class _ListInvitesState extends State<ListInvites> {
                   child: SizedBox(
                     width: 800 * multiplier,
                     height: 800 * multiplier,
-                    child: Circumference(
+                    child: const Circumference(
                       opacity: 100,
                     ),
                   ),
@@ -169,7 +169,7 @@ class _ListInvitesState extends State<ListInvites> {
                   child: SizedBox(
                     width: 800 * multiplier,
                     height: 800 * multiplier,
-                    child: Circumference(
+                    child: const Circumference(
                       opacity: 100,
                     ),
                   ),
@@ -407,13 +407,13 @@ class _ListInvitesState extends State<ListInvites> {
                               descrip: ListImages.listBBX),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       SizedBox(
                         width: width,
                         height: height / 5.5,
-                        child: Footer(),
+                        child: const Footer(),
                       ),
                     ],
                   ),

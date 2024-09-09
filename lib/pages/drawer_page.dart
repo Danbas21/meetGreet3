@@ -88,7 +88,7 @@ class _AppDrawerState extends State<AppDrawer>
                     _buildListTile(
                       context,
                       'HOME',
-                      ResponsiveZoomableWebPage(),
+                      const ResponsiveZoomableWebPage(),
                     ),
                     _buildListTile(
                       context,
@@ -103,7 +103,7 @@ class _AppDrawerState extends State<AppDrawer>
                     _buildListTile(
                       context,
                       'HORARIOS',
-                      SchedulePage(),
+                      const SchedulePage(),
                     ),
                   ],
                 ),

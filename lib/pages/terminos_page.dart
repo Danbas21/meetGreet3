@@ -188,7 +188,7 @@ class Terminos extends StatelessWidget {
             child: SizedBox(
               width: 900 * multiplier,
               height: 70 * multiplier,
-              child: BarNavi(),
+              child: const BarNavi(),
             ),
           ),
         ]),

@@ -5,7 +5,7 @@ class ImageGrid extends StatefulWidget {
   final List<String> images;
   final List<String> descrip;
 
-  ImageGrid({super.key, required this.images, required this.descrip});
+  const ImageGrid({super.key, required this.images, required this.descrip});
   @override
   ImageGridState createState() => ImageGridState();
 }
@@ -20,7 +20,7 @@ class ImageGridState extends State<ImageGrid> {
   void _scrollUp() {
     setState(() {
       isUpPressed = true;
-      Future.delayed(Duration(milliseconds: 200), () {
+      Future.delayed(const Duration(milliseconds: 200), () {
         setState(() {
           isUpPressed = false;
         });
@@ -29,7 +29,7 @@ class ImageGridState extends State<ImageGrid> {
 
     _scrollController.animateTo(
       _scrollController.offset - 100,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       curve: Curves.easeOut,
     );
   }
@@ -37,7 +37,7 @@ class ImageGridState extends State<ImageGrid> {
   void _scrollDown() {
     setState(() {
       isDownPressed = true;
-      Future.delayed(Duration(milliseconds: 200), () {
+      Future.delayed(const Duration(milliseconds: 200), () {
         setState(() {
           isDownPressed = false;
         });
@@ -46,7 +46,7 @@ class ImageGridState extends State<ImageGrid> {
 
     _scrollController.animateTo(
       _scrollController.offset + 100,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       curve: Curves.easeOut,
     );
   }

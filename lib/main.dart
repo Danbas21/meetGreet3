@@ -19,6 +19,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -26,6 +27,8 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -69,8 +72,9 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: const BarNavi(),
-      drawer:
-          width < ResponsiveZoomableWebPage.wideBreakpoint ? AppDrawer() : null,
+      drawer: width < ResponsiveZoomableWebPage.wideBreakpoint
+          ? const AppDrawer()
+          : null,
       body: OrientationBuilder(
         builder: (context, orientation) {
           return LayoutBuilder(
@@ -237,14 +241,15 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
                   Positioned(
                     top: width / 3,
                     right: 10,
-                    child: SizedBox(width: 350, child: ConstantBounceButton()),
+                    child: const SizedBox(
+                        width: 320, child: ConstantBounceButton()),
                   ),
                   Positioned(
                     top: width / 4.5,
                     left: 10,
                     child: SizedBox(
-                        width: width / 4,
-                        height: height / 2,
+                        width: width / 4.5,
+                        height: height / 2.5,
                         child: Image.asset('assets/images/losniños.png')),
                   ),
                 ],
@@ -277,13 +282,13 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
             ),
           ],
         ),
-        HomePage(),
-        LandingPage2(),
-        LadingPage3(),
-        Container(
+        const HomePage(),
+        const LandingPage2(),
+        const LadingPage3(),
+        SizedBox(
           width: width,
           height: height / 3.5,
-          child: Footer(),
+          child: const Footer(),
         ),
       ],
     );
@@ -581,7 +586,7 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
             ],
           ),
         ),
-        Container(
+        SizedBox(
           width: width,
           height: height * 3.6,
           child: Padding(
@@ -773,7 +778,7 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
         SizedBox(
           width: width,
           height: height / 6.5,
-          child: Footer(),
+          child: const Footer(),
         ),
       ],
     );
@@ -1070,7 +1075,7 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
             ],
           ),
         ),
-        Container(
+        SizedBox(
           width: width,
           height: height * 3.6,
           child: Padding(
@@ -1262,7 +1267,7 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
         SizedBox(
           width: width,
           height: height / 6.5,
-          child: Footer(),
+          child: const Footer(),
         ),
       ],
     );

@@ -4,7 +4,7 @@ class RotatableImageCard extends StatefulWidget {
   final String frontImage;
   final String description;
 
-  RotatableImageCard({required this.frontImage, required this.description});
+  const RotatableImageCard({super.key, required this.frontImage, required this.description});
 
   @override
   _RotatableImageCardState createState() => _RotatableImageCardState();
@@ -20,7 +20,7 @@ class _RotatableImageCardState extends State<RotatableImageCard>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 600),
       vsync: this,
     );
     _animation = Tween<double>(begin: 0, end: 1).animate(CurvedAnimation(

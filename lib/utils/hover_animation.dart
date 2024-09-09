@@ -12,7 +12,7 @@ class HoverContainer extends StatefulWidget {
 }
 
 class HoverContainerState extends State<HoverContainer> {
-  bool _isHovered = false;
+  final bool _isHovered = false;
 
   @override
   Widget build(BuildContext context) {
