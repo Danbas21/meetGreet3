@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
             : 4;
 
     double variant = av == 1.0
-        ? 9.7
+        ? 10
         : av == .65
             ? 8
             : 5;

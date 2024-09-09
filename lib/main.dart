@@ -23,7 +23,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -87,10 +87,11 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
                   // Contenido principal
                   Expanded(
                     child: InteractiveViewer(
-                      clipBehavior: Clip.antiAlias,
-                      boundaryMargin: const EdgeInsets.all(20),
-                      minScale: 1.0,
-                      maxScale: 5,
+                      constrained: false,
+                      scaleEnabled: false,
+                      transformationController: TransformationController(),
+                      boundaryMargin: const EdgeInsets.all(double.infinity),
+                      maxScale: 5.0,
                       child: SingleChildScrollView(
                         child: ConstrainedBox(
                           constraints:
@@ -242,7 +243,7 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
                     top: width / 3,
                     right: 10,
                     child: const SizedBox(
-                        width: 320, child: ConstantBounceButton()),
+                        width: 280, child: ConstantBounceButton()),
                   ),
                   Positioned(
                     top: width / 4.5,
