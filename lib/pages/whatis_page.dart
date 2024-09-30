@@ -32,7 +32,7 @@ class _WhatIsPageState extends State<WhatIsPage> {
 
     return Scaffold(
       appBar: const BarNavi(),
-      drawer: width < 1100 ? AppDrawer() : null,
+      drawer: width < 1100 ? const AppDrawer() : null,
       body: SizedBox(
         width: width,
         height: height,
@@ -173,7 +173,7 @@ class _WhatIsPageState extends State<WhatIsPage> {
               child: SizedBox(
                 width: width,
                 height: height / 6,
-                child: Footer(),
+                child: const Footer(),
               ),
             ),
           ],

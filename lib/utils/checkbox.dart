@@ -10,8 +10,8 @@ class CheckboxWidget extends StatefulWidget {
     required this.isTermsAccepted,
     required this.showTermsError,
     required this.onChanged,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   CheckboxWidgetState createState() => CheckboxWidgetState();

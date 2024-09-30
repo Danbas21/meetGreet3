@@ -5,6 +5,8 @@ import 'dart:async';
 import 'package:intl/intl.dart';
 
 class PaymentGatewayScreen extends StatefulWidget {
+  const PaymentGatewayScreen({super.key});
+
   @override
   _PaymentGatewayScreenState createState() => _PaymentGatewayScreenState();
 }
@@ -35,13 +37,13 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
         _isProcessing = true;
       });
 
-      Timer(Duration(seconds: 35), () {
+      Timer(const Duration(seconds: 35), () {
         setState(() {
           _isProcessing = false;
         });
 
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text('Pago rechazado por emisor'),
           ),
         );
@@ -66,10 +68,10 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Realizar pago'),
+        title: const Text('Realizar pago'),
       ),
       body: _isProcessing
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : Padding(
               padding: EdgeInsets.only(
                   left: multiplier == 1 ? 200 : 10,
@@ -81,10 +83,10 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
                   children: <Widget>[
                     Text(
                       'Costo del boleto: ${_formatCurrency(ticketPrice)}',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     DropdownButtonFormField<String>(
                       value: _selectedCardType,
                       onChanged: (String? newValue) {
@@ -99,15 +101,15 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
                           child: Text(value),
                         );
                       }).toList(),
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Tipo de Tarjeta',
                         border: OutlineInputBorder(),
                       ),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
                       controller: _nameController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Nombre en la Tarjeta',
                         border: OutlineInputBorder(),
                       ),
@@ -118,10 +120,10 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
                         return null;
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
                       controller: _cardNumberController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Número de Tarjeta',
                         border: OutlineInputBorder(),
                       ),
@@ -133,10 +135,10 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
                         return null;
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
                       controller: _expiryDateController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Fecha de Vencimiento (MM/AA)',
                         border: OutlineInputBorder(),
                       ),
@@ -148,10 +150,10 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
                         return null;
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     TextFormField(
                       controller: _cvvController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'CCV',
                         border: OutlineInputBorder(),
                       ),
@@ -163,9 +165,9 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
                         return null;
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     CheckboxListTile(
-                      title: Text('Meses sin intereses'),
+                      title: const Text('Meses sin intereses'),
                       value: _isInstallments,
                       onChanged: (bool? value) {
                         setState(() {
@@ -191,7 +193,7 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
                             child: Text('$value meses'),
                           );
                         }).toList(),
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Seleccionar meses',
                           border: OutlineInputBorder(),
                         ),
@@ -199,10 +201,10 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
                     if (_selectedInstallmentOption != null)
                       Text(
                         'Cuota mensual: ${_formatCurrency(installmentAmount)}',
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     CheckboxWidget(
                       isTermsAccepted: _isTermsAccepted,
                       showTermsError: _showTermsError,
@@ -214,23 +216,23 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
                       },
                     ),
                     if (_showTermsError)
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 8.0),
                         child: Text(
                           'Debe aceptar los términos y condiciones',
                           style: TextStyle(color: Colors.red, fontSize: 12),
                         ),
                       ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: _processPayment,
-                      child: Text('Pagar'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                        textStyle: TextStyle(fontSize: 20),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                        textStyle: const TextStyle(fontSize: 20),
                       ),
+                      child: Text('Pagar'),
                     ),
                   ],
                 ),
@@ -249,8 +251,8 @@ class CheckboxWidget extends StatefulWidget {
     required this.isTermsAccepted,
     required this.showTermsError,
     required this.onChanged,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   CheckboxWidgetState createState() => CheckboxWidgetState();
@@ -272,7 +274,7 @@ class CheckboxWidgetState extends State<CheckboxWidget> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Terminos()),
+                  MaterialPageRoute(builder: (context) => const Terminos()),
                 );
               },
               child: const Text(

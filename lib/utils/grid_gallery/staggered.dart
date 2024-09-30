@@ -2,21 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/drawer_page.dart';
 import 'package:flutter_app/pages/footer_page.dart';
 import 'package:flutter_app/utils/bar_navegacion.dart';
-import 'package:flutter_app/utils/utils_list.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/drawer_page.dart';
-import 'package:flutter_app/pages/footer_page.dart';
-import 'package:flutter_app/utils/bar_navegacion.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/drawer_page.dart';
-import 'package:flutter_app/pages/footer_page.dart';
-import 'package:flutter_app/utils/bar_navegacion.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 class GalleryGridStaggered extends StatelessWidget {

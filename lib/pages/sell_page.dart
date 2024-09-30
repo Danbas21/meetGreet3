@@ -61,7 +61,7 @@ class SellTicket extends StatelessWidget {
               child: SizedBox(
                 width: 800 * av,
                 height: 800 * av,
-                child: Circumference(
+                child: const Circumference(
                   opacity: 100,
                 ),
               ),
@@ -94,7 +94,7 @@ class SellTicket extends StatelessWidget {
               child: SizedBox(
                 width: 800 * av,
                 height: 800 * av,
-                child: Circumference(
+                child: const Circumference(
                   opacity: 100,
                 ),
               ),
@@ -127,7 +127,7 @@ class SellTicket extends StatelessWidget {
               child: SizedBox(
                 width: 800 * av,
                 height: 800 * av,
-                child: Circumference(
+                child: const Circumference(
                   opacity: 100,
                 ),
               ),
@@ -327,7 +327,7 @@ class SellTicket extends StatelessWidget {
                             ? 1.11
                             : .9),
                 height: 90 * av,
-                child: BarNavi(),
+                child: const BarNavi(),
               ),
             ),
           ],

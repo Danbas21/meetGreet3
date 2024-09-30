@@ -1,3 +1,6 @@
+import 'dart:typed_data';
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/drawer_page.dart';
@@ -26,6 +29,8 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -69,8 +74,9 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: const BarNavi(),
-      drawer:
-          width < ResponsiveZoomableWebPage.wideBreakpoint ? AppDrawer() : null,
+      drawer: width < ResponsiveZoomableWebPage.wideBreakpoint
+          ? const AppDrawer()
+          : null,
       body: OrientationBuilder(
         builder: (context, orientation) {
           return LayoutBuilder(
@@ -279,13 +285,13 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
             ),
           ],
         ),
-        HomePage(),
-        LandingPage2(),
-        LadingPage3(),
-        Container(
+        const HomePage(),
+        const LandingPage2(),
+        const LadingPage3(),
+        SizedBox(
           width: width,
           height: height / 3.5,
-          child: Footer(),
+          child: const Footer(),
         ),
       ],
     );
@@ -583,7 +589,7 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
             ],
           ),
         ),
-        Container(
+        SizedBox(
           width: width,
           height: height * 3.6,
           child: Padding(
@@ -775,7 +781,7 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
         SizedBox(
           width: width,
           height: height / 6.5,
-          child: Footer(),
+          child: const Footer(),
         ),
       ],
     );
@@ -1072,7 +1078,7 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
             ],
           ),
         ),
-        Container(
+        SizedBox(
           width: width,
           height: height * 3.6,
           child: Padding(
@@ -1264,7 +1270,7 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
         SizedBox(
           width: width,
           height: height / 6.5,
-          child: Footer(),
+          child: const Footer(),
         ),
       ],
     );

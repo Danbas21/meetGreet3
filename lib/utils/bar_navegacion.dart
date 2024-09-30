@@ -29,12 +29,12 @@ class BarNavi extends StatelessWidget implements PreferredSizeWidget {
             ? <Widget>[
                 TextButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const ResponsiveZoomableWebPage()),
-                    );
+                    // Navigator.pushReplacement(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //       builder: (context) =>
+                    //           const ResponsiveZoomableWebPage()),
+                    // );
                   },
                   child: Text(
                     'HOME',
