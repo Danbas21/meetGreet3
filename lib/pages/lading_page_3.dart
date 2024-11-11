@@ -110,7 +110,7 @@ class LadingPage3 extends StatelessWidget {
                       left: 10,
                       top: height /
                           (av == 1.0
-                              ? 10
+                              ? 11
                               : av == .65
                                   ? 7
                                   : 16),
@@ -118,17 +118,17 @@ class LadingPage3 extends StatelessWidget {
                         width: width,
                         height: height,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             SizedBox(
-                              width: width / 3.5,
+                              width: width / 4,
                               height: height,
                               child: HoverContainer(
                                 child: Column(
                                   children: [
                                     Image.asset(
                                       'assets/images/rectangle_20.png',
-                                      fit: BoxFit.fill,
+                                      fit: BoxFit.contain,
                                     ),
                                     Text(
                                       'MEET AND GREET',
@@ -151,7 +151,7 @@ class LadingPage3 extends StatelessWidget {
                                   children: [
                                     Image.asset(
                                       'assets/images/rectangle_6.png',
-                                      fit: BoxFit.fill,
+                                      fit: BoxFit.contain,
                                     ),
                                     Text(
                                       'PRÓXIMOS EVENTOS',

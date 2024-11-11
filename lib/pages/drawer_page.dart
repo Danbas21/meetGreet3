@@ -84,11 +84,19 @@ class _AppDrawerState extends State<AppDrawer>
                         ),
                       ),
                     ),
+<<<<<<< HEAD
                     // _buildListTile(
                     //   context,
                     //   'HOME',
                     //   // const ResponsiveZoomableWebPage(),
                     // ),
+=======
+                    _buildListTile(
+                      context,
+                      'HOME',
+                      const ResponsiveZoomableWebPage(),
+                    ),
+>>>>>>> 1243392229dc1a7cdeb6027a43317cc41c8e9a5b
                     _buildListTile(
                       context,
                       '¿QUÉ ES?',

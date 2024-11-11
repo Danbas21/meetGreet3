@@ -34,7 +34,7 @@ class ConstantBounceButtonState extends State<ConstantBounceButton>
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+
     final double av = ResponsiveUtil.getMultiplier(context);
 
     return ScaleTransition(
@@ -59,7 +59,7 @@ class ConstantBounceButtonState extends State<ConstantBounceButton>
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: const Color.fromARGB(255, 255, 255, 255),
-                fontSize: width / (av == 1.0 ? 50 : 40),
+                fontSize: width / (av == 1.0 ? 45 : 35),
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Roboto'),
           ),

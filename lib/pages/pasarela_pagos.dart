@@ -66,6 +66,9 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
       installmentAmount = ticketPrice / months;
     }
 
+    double width = MediaQuery.of(context).size.width;
+    double heigth = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Realizar pago'),
@@ -81,6 +84,18 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
                 key: _formKey,
                 child: ListView(
                   children: <Widget>[
+                    SizedBox(
+                      width: width / 1.5,
+                      height: heigth / 1.5,
+                      child: ClipRRect(
+                        child: FadeInImage(
+                          placeholder: AssetImage('assets/images/load.gif'),
+                          fit: BoxFit.contain,
+                          image: AssetImage('assets/images/boletos_vip.png'),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
                     Text(
                       'Costo del boleto: ${_formatCurrency(ticketPrice)}',
                       style: const TextStyle(

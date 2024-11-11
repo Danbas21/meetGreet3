@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/drawer_page.dart';
 import 'package:flutter_app/pages/footer_page.dart';
 import 'package:flutter_app/utils/bar_navegacion.dart';
+
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -47,6 +48,36 @@ class _GalleryGridState extends State<GalleryGrid> {
     final anchor = html.AnchorElement(href: imageUrl)
       ..download = imageUrl.split('/').last // Nombre del archivo
       ..click();
+  }
+
+  @override
+  State<GalleryGridStaggered> createState() => _GalleryGridStaggeredState();
+}
+
+class _GalleryGridStaggeredState extends State<GalleryGridStaggered> {
+  final storage = FirebaseStorage.instance;
+
+  Future<String> getImageUrl() async {
+    try {
+      print('Iniciando getImageUrl');
+      final ref = storage.ref().child('Gallery/meet2.JPG');
+      print('Referencia creada: ${ref.fullPath}');
+      final url = await ref.getDownloadURL();
+      print('URL obtenida: $url');
+
+      // Intenta hacer una solicitud GET a la URL
+
+      final response = await http.get(Uri.parse(url));
+      print('Respuesta HTTP: ${response.statusCode}');
+      if (response.statusCode != 200) {
+        throw Exception('HTTP error ${response.statusCode}');
+      }
+
+      return url;
+    } catch (e) {
+      print('Error detallado en getImageUrl: $e');
+      rethrow;
+    }
   }
 
   @override

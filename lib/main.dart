@@ -22,6 +22,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -244,6 +245,7 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
                     top: width / 3.5,
                     left: 20,
                     child: SizedBox(
+<<<<<<< HEAD
                         width: width / 4,
                         height: height / 2,
                         child: Text(
@@ -253,6 +255,11 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
                               fontWeight: FontWeight.w400,
                               letterSpacing: 1),
                         )),
+=======
+                        width: width / 4.5,
+                        height: height / 2.5,
+                        child: Image.asset('assets/images/losniños.png')),
+>>>>>>> 1243392229dc1a7cdeb6027a43317cc41c8e9a5b
                   ),
                 ],
               ),
