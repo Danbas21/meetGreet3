@@ -232,7 +232,7 @@ class _PaymentGatewayScreenState extends State<PaymentGatewayScreen> {
                             horizontal: 20, vertical: 10),
                         textStyle: const TextStyle(fontSize: 20),
                       ),
-                      child: Text('Pagar'),
+                      child: const Text('Pagar'),
                     ),
                   ],
                 ),

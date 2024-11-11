@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/pasarela_pagos.dart';
+import 'package:flutter_app/utils/photos_panel.dart';
 import 'package:flutter_app/utils/screen_utils.dart';
 
 class ConstantBounceButton extends StatefulWidget {
@@ -43,7 +44,7 @@ class ConstantBounceButtonState extends State<ConstantBounceButton>
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => PaymentGatewayScreen(),
+              builder: (context) => const PhotosPanel(),
             ),
           );
         },
@@ -54,7 +55,7 @@ class ConstantBounceButtonState extends State<ConstantBounceButton>
             borderRadius: BorderRadius.circular(8),
           ),
           child: Text(
-            'Compra\ntus boletos',
+            'Descarga\ntu foto',
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: const Color.fromARGB(255, 255, 255, 255),

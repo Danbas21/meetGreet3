@@ -1,9 +1,0 @@
-<svg width="83" height="29" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
- <g class="layer">
-  <title>Layer 1</title>
-  <text fill="#f5efe5" font-family="Serif" font-size="20" id="svg_15" stroke-width="0" text-anchor="middle" transform="matrix(1 0 0 1 0 0) matrix(1.01724 0 0 0.924602 0.543087 -6.61093)" x="20.11" xml:space="preserve" y="19.74">OPPI</text>
-  <text fill="#f5efe5" font-family="Times" font-size="20" id="svg_18" stroke-width="0" text-anchor="middle" x="40.5" xml:space="preserve" y="28.77">DEVP</text>
-  <polygon cx="-16.5" cy="-33.23" fill="#f5efe5" id="svg_19" orient="point" point="5" points="-16.499842346210073,-34.566858684518685 -16.238604469926926,-33.59308851058252 -15.231767057285152,-33.64554805840205 -16.0771505832351,-33.096184541498125 -15.716128717360629,-32.15483615114888 -16.499842346210073,-32.789080999459244 -17.283555975059517,-32.15483615114888 -16.922534109185047,-33.096184541498125 -17.767917635134996,-33.64554805840205 -16.76108022249322,-33.59308851058252 -16.499842346210073,-34.566858684518685 -16.238604469926926,-33.59308851058252 " r="1.33" r2="0.44" radialshift="0" shape="star" starRadiusMultiplier="3" stroke-width="0" transform="matrix(1 0 0 1 0 0)"/>
-  <path d="m8.2,15.94c0.08,2.35 1.97,4.24 4.32,4.32c-2.35,0.09 -4.24,1.98 -4.32,4.33c-0.09,-2.35 -1.98,-4.24 -4.33,-4.33c2.35,-0.08 4.24,-1.97 4.33,-4.32z" fill="#F5EFE5" id="svg_20" transform="matrix(1 0 0 1 0 0)"/>
- </g>
-</svg>

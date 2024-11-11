@@ -215,7 +215,7 @@ class HomePage extends StatelessWidget {
                           : av == .65
                               ? width / 1.3
                               : width,
-                      child: CountdownPage(),
+                      child: const CountdownPage(),
                     ),
                   )
                 ],

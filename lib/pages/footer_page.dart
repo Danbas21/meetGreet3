@@ -70,7 +70,7 @@ class Footer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => ContactFormPage(),
+                  builder: (context) => const ContactFormPage(),
                 ),
               );
             },

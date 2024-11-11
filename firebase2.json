@@ -1,0 +1,22 @@
+{
+  "flutter": {
+    "platforms": {
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "mancaveautographs-5397e",
+          "configurations": {
+            "web": "1:328241095450:web:0c67fa5b7401d72e9d82a3"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "\\web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

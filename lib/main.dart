@@ -25,7 +25,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -88,20 +88,13 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
 
                   // Contenido principal
                   Expanded(
-                    child: InteractiveViewer(
-                      constrained: false,
-                      scaleEnabled: false,
-                      transformationController: TransformationController(),
-                      boundaryMargin: const EdgeInsets.all(double.infinity),
-                      maxScale: 5.0,
-                      child: SingleChildScrollView(
-                        child: ConstrainedBox(
-                          constraints:
-                              BoxConstraints(minWidth: constraints.maxWidth),
-                          child: IntrinsicHeight(
-                            child: _buildResponsiveContent(
-                                constraints.maxWidth, isPortrait, context),
-                          ),
+                    child: SingleChildScrollView(
+                      child: ConstrainedBox(
+                        constraints:
+                            BoxConstraints(minWidth: constraints.maxWidth),
+                        child: IntrinsicHeight(
+                          child: _buildResponsiveContent(
+                              constraints.maxWidth, isPortrait, context),
                         ),
                       ),
                     ),
@@ -248,12 +241,18 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
                         width: 280, child: ConstantBounceButton()),
                   ),
                   Positioned(
-                    top: width / 4.5,
-                    left: 10,
+                    top: width / 3.5,
+                    left: 20,
                     child: SizedBox(
                         width: width / 4,
                         height: height / 2,
-                        child: Image.asset('assets/images/losniños.png')),
+                        child: Text(
+                          '¿Adquiriste una foto profesional con alguno de nuestros invitados?',
+                          style: TextStyle(
+                              fontSize: width / 60,
+                              fontWeight: FontWeight.w400,
+                              letterSpacing: 1),
+                        )),
                   ),
                 ],
               ),
@@ -446,7 +445,7 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
             color: Color.fromARGB(26, 163, 224, 217),
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10)),
           ),
-          child: Center(
+          child: const Center(
             child: CountdownPage(),
           ),
         ),
@@ -935,7 +934,7 @@ class _ResponsiveZoomableWebPageState extends State<ResponsiveZoomableWebPage> {
             color: Color.fromARGB(26, 163, 224, 217),
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10)),
           ),
-          child: Center(
+          child: const Center(
             child: CountdownPage(),
           ),
         ),
